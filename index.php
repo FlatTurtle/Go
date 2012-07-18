@@ -26,7 +26,12 @@ if(isset($hostname) && $hostname != ""){
 	$needles = R::find('infoscreens',' hostname = ?', array( $haystack ));
 	foreach($needles as $needle){
 		$infoscreen = $needle["alias"];
-		header("location: http://s.flatturtle.com/stable/" . $infoscreen);
+		$version = $needle["version_tag"];
+                if($version == "testing"){
+                    header("location: http://ftinfoscreen-testing.pagodabox.com/");
+                }else{
+		    header("location: http://s.flatturtle.com/" . $version . "/" . $infoscreen);
+                }
 	}
 	if(sizeof($needles) == 0){
 		header("location: http://s.flatturtle.com/stable/");
