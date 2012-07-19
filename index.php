@@ -28,7 +28,7 @@ if(isset($hostname) && $hostname != ""){
 		$infoscreen = $needle["alias"];
 		$version = $needle["version_tag"];
                 if($version == "testing"){
-                    header("location: http://ftinfoscreen-testing.pagodabox.com/");
+                    header("location: http://ftinfoscreen-testing.pagodabox.com/" . $infoscreen);
                 }else{
 		    header("location: http://s.flatturtle.com/" . $version . "/" . $infoscreen);
                 }
