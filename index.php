@@ -30,14 +30,14 @@ if(isset($hostname) && $hostname != ""){
                 if($version == "testing"){
                     header("location: http://testing.s.flatturtle.com/" . $infoscreen);
                 }else{
-		    header("location: http://s.flatturtle.com/" . $version . "/" . $infoscreen);
+		    header("location: https://s.flatturtle.com/" . $version . "/" . $infoscreen);
                 }
 	}
 	if(sizeof($needles) == 0){
-		header("location: http://s.flatturtle.com/stable/");
+		header("location: https://s.flatturtle.com/stable/");
 	}
 }else{
-	header("location: http://s.flatturtle.com/stable/");
+	header("location: https://s.flatturtle.com/stable/");
 }
 
 ?>
