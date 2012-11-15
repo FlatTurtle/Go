@@ -48,24 +48,20 @@ if(isset($hostname) && $hostname != ""){
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Your FlatTurtle</title>
-		
+		<title>FlatTurtle</title>
 		<!-- For iPhone 4 -->
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.flatturtle.com/themes/site/img/apple-touch-icon-114.png">
 		<!-- For iPad 1-->
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.flatturtle.com/themes/site/img/apple-touch-icon-72.png">
 		<!-- For everything else -->
 		<link rel="shortcut icon" href="https://www.flatturtle.com/themes/site/img/favicon.ico">
-
 		<link rel="stylesheet" href="https://my.flatturtle.com/assets/css/style.css" type="text/css" media="screen" />
 		<link type="text/css" rel="stylesheet" href="https://fast.fonts.com/cssapi/66253153-9c89-413c-814d-60d3ba0d6ac2.css"/>
-		
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://my.flatturtle.com/assets/css/ie7-font-awesome.css" type="text/css" media="screen" /><![endif]-->
-		
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 		<script type="text/javascript">
-                        window.setTimeout(function(){ 
+                        window.setTimeout(function(){
                                 location = "<?php echo $url; ?>";
                             }, 1000*60*<?php echo $timetoredirect; ?>);
 
@@ -96,7 +92,7 @@ if(isset($hostname) && $hostname != ""){
 <div class='row'>
 	<div class='span12'>
 		<h2>
-                       Your Turtle is being configured
+                       Your Turtle is being configured.
 		</h2>
 
 
@@ -114,9 +110,9 @@ if(isset($hostname) && $hostname != ""){
                                                    Are you a developer who would like to know more about FlatTurtle?
                                                    Did you know you can control your FlatTurtle through an API?
                                                    Did you know you can write your own turtles and panes?
-                                                   Get in touch with us at 
-                                                      http://dev.FlatTurtle.com 
-                                                   or mail us at 
+                                                   Get in touch with us at
+                                                      http://dev.FlatTurtle.com
+                                                   or mail us at
                                                       info@flatturtle.com
 -->
 				</div>
