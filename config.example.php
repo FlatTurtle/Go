@@ -20,7 +20,7 @@
 |	['port'] 	 The port used to connect to the database
 */
 
-$timetoredirect = 3; // in minutes
+$timetoredirect = 0; // in minutes
 
 $dbhost = 'localhost';
 $dbuser = 'lulz';
