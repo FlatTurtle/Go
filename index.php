@@ -13,7 +13,7 @@ define('BASE_URL', 'https://s.flatturtle.com/');
 // Get the hostname
 $hostname = trim($_GET['hostname']);
 
-$url = "https://flatturtle.com";
+$url = "https://s.flatturtle.com/demo/view";
 // Talk to the database
 if(isset($hostname) && $hostname != ""){
 	R::setup("mysql:host=$dbhost;dbname=$db",$dbuser,$dbpass);
