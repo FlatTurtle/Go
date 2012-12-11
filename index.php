@@ -22,7 +22,7 @@ if(isset($hostname) && $hostname != ""){
 		$infoscreen = $needle["alias"];
 		$version = $needle["version"];
 		if($version == "testing"){
-			$url = "https://test.flatturtle.com/" . $infoscreen . "/";
+			$url = "https://test.flatturtle.com/" . $infoscreen . "/view/";
 		}else{
 			$url = BASE_URL . $infoscreen . "/view/" . $version . "/";
 		}
