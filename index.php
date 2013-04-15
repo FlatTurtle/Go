@@ -1,33 +1,47 @@
 <?php
 /**
- * This uses RedBeanPHP to get a variable from our database
+ * General redirect script for all screens
  * When the right parameter has been passed as a hostname,
- * it will redirect to the right infoscreen
+ * it will redirect to the matched infoscreen
+ *
+ * @author: Michiel Vancoillie (michiel@irail.be)
  */
+
+// Include config & redbean
 include_once("config.php");
 include_once("rb.php");
 
-// Trailing slash
+// Base URL with trailing slash
 define('BASE_URL', 'http://s.flatturtle.com/');
 
 // Get the hostname
 $hostname = trim($_GET['hostname']);
 
+// Default url
 $url = BASE_URL . "demo/view/";
 
-// Talk to the database
+// Did we receive a hostname?
 if(isset($hostname) && $hostname != ""){
-	R::setup("mysql:host=$dbhost;dbname=$db",$dbuser,$dbpass);
-	$needles = R::find('infoscreen',' hostname = ?', array( $hostname ));
-	foreach($needles as $needle){
-		$infoscreen = $needle["alias"];
-		$version = $needle["version"];
-		if($version == "testing"){
-			$url = "https://test.flatturtle.com/" . $infoscreen . "/view/";
-		}else{
-			$url = BASE_URL . $infoscreen . "/view/" . $version . "/";
-		}
-	}
+
+    // Talk to the database
+    R::setup("mysql:host=$dbhost;dbname=$db", $dbuser, $dbpass);
+    $screen = R::findOne('infoscreen', ' hostname = ?', array($hostname));
+
+    // Do we have a match?
+    if(!empty($screen)){
+        // Get first match
+        $alias = $screen["alias"];
+        $version = $screen["version"];
+
+        if($version == "testing"){
+            // Redirect to test version
+            $url = "https://test.flatturtle.com/" . $alias . "/view/";
+        }else{
+            // Go to a specific version
+            $url = BASE_URL . $alias . "/view/" . $version . "/";
+        }
+    }
 }
 
-header('Location: '. $url);
+// To space and beyond!
+header('Location: ' . $url);

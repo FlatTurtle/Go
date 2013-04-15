@@ -1,7 +1,7 @@
 # FlatTurtle
 
-A simple redirect script for a launcher. It requires 2 db fields.
+A simple redirect script, used when the MyTurtles boot.
 
 # Copyright & License
 
-© iRail vzw/asbl 2012 - AGPLv3
+© FlatTurtle bvba 2012 - AGPLv3
