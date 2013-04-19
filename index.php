@@ -12,7 +12,7 @@ include_once("config.php");
 include_once("rb.php");
 
 // Base URL with trailing slash
-define('BASE_URL', 'http://s.flatturtle.com/');
+define('BASE_URL', 'https://s.flatturtle.com/');
 
 // Get the hostname
 $hostname = trim($_GET['hostname']);
