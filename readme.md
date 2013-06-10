@@ -1,7 +1,7 @@
 # FlatTurtle
 
-A simple redirect script, used when the MyTurtles boot.
+A simple redirect script, used when the [MyTurtles](https://github.com/FlatTurtle/MyTurtle) boot.
 
 # Copyright & License
 
-© FlatTurtle bvba 2012 - AGPLv3
+FlatTurtle 2012-2013 - AGPLv3
