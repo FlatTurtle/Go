@@ -23,40 +23,48 @@ $url = BASE_URL . "demo/view/";
 // Did we receive a hostname?
 if(isset($hostname) && $hostname != ""){
 
-    // Talk to the database
-    R::setup("mysql:host=$dbhost;dbname=$db", $dbuser, $dbpass);
-    $screen = R::findOne('infoscreen', ' hostname = ?', array($hostname));
+    // Screen or tablet
+    if($hostname == 'tablet'){
 
-    // Do we have a match?
-    if(!empty($screen)){
-        // Get first match
-        $alias = $screen["alias"];
-        $version = $screen["version"];
+        // Redirect to tablet app
+        $url = BASE_URL . "/tablet";
 
-        // Check sleep state
-        $sleep = false;
-        $power = R::findOne('plugin', ' infoscreen_id = ? AND  type = "power"', array($screen["id"]));
+    }else{
 
-        if(!empty($power) && $power['state'] == 0){
-            $sleep = true;
-        }
+        // Talk to the database
+        R::setup("mysql:host=$dbhost;dbname=$db", $dbuser, $dbpass);
+        $screen = R::findOne('infoscreen', ' hostname = ?', array($hostname));
 
+        // Do we have a match?
+        if(!empty($screen)){
+            // Get first match
+            $alias = $screen["alias"];
+            $version = $screen["version"];
 
-        // Build URL
-        if(!$sleep){
-            if($version == "testing"){
-                // Redirect to test version
-                $url = "https://test.flatturtle.com/" . $alias . "/view/";
-            }else{
-                // Go to a specific version
-                $url = BASE_URL . $alias . "/view/" . $version . "/";
+            // Check sleep state
+            $sleep = false;
+            $power = R::findOne('plugin', ' infoscreen_id = ? AND  type = "power"', array($screen["id"]));
+
+            if(!empty($power) && $power['state'] == 0){
+                $sleep = true;
             }
-        }else{
-            // Redirect to sleep page
-            $url = BASE_URL . $alias . "/view/sleep/";
+
+
+            // Build URL
+            if(!$sleep){
+                if($version == "testing"){
+                    // Redirect to test version
+                    $url = "https://test.flatturtle.com/" . $alias . "/view/";
+                }else{
+                    // Go to a specific version
+                    $url = BASE_URL . $alias . "/view/" . $version . "/";
+                }
+            }else{
+                // Redirect to sleep page
+                $url = BASE_URL . $alias . "/view/sleep/";
+            }
+
         }
-
-
     }
 }
 
