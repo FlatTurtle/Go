@@ -27,7 +27,7 @@ if(isset($hostname) && $hostname != ""){
     if($hostname == 'tablet'){
 
         // Redirect to tablet app
-        $url = BASE_URL . "/tablet";
+        $url = BASE_URL . "/mtc";
 
     }else{
 
