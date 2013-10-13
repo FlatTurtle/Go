@@ -54,7 +54,7 @@ if(isset($hostname) && $hostname != ""){
             if(!$sleep){
                 if($version == "testing"){
                     // Redirect to test version
-                    $url = "https://test.flatturtle.com/" . $alias . "/view/";
+                    $url = "https://testing.s.flatturtle.com/" . $alias . "/view/";
                 }else{
                     // Go to a specific version
                     $url = BASE_URL . $alias . "/view/" . $version . "/";
