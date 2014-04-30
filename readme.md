@@ -4,4 +4,4 @@ A simple redirect script, used when the [MyTurtles](https://github.com/FlatTurtl
 
 # Copyright & License
 
-FlatTurtle 2012-2013 - AGPLv3
+FlatTurtle 2012-2014 - AGPLv3
